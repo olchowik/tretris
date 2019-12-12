@@ -4,13 +4,13 @@ enum RotationState {_0=0, _90=1, _180=2, _270=3};
 
 class Tetromino {
 
-    //currentBoardRow and currentBoardCol determin tetomino top-left corner position. 
-    private currentBoardRow: number; // Starting row for Tetromino.
-    private currentBoardCol: number; // Starting column for Tetromino.
+    //currentBoardRow and currentBoardCol determine tetromino top-left corner position. 
+    private currentBoardRow: number; // Starting row for tetromino.
+    private currentBoardCol: number; // Starting column for tetromino.
     private rotation:RotationState; //0-4
     
-    //check Colisions with boardEdges
-    //check colisions with board Items
+    //check Collisions with boardEdges
+    //check collisions with board Items
 
 
 }
@@ -23,7 +23,7 @@ class ActiveTetromino extends Tetromino {
 }
 
 /**
- * Creates logical gameboard - a 2D array od numbers that stores values coresponding tetromino colors.
+ * Creates logical game board - a 2D array od numbers that stores values corresponding tetromino colors.
  * Keeps game state (isPlaying) and score.
  * Creates game-loop.
  * @listens frontReady 
@@ -36,19 +36,19 @@ class Game {
     private score: number = 0; // Tracks the score
     private isPlaying: boolean = true;
     /**
-     * @param rows number of rows in logical gameboard
-     * @param cols number of columns in logical gameboard
+     * @param rows number of rows in logical game board
+     * @param cols number of columns in logical game board
      * @listens frontReady - all logic starts after frontReady
      */
     constructor(private rows: number = 20, private cols: number = 12) {
-        document.addEventListener('frontReady', this.createGameboard)
+        document.addEventListener('frontReady', this.createGameBoard)
     }
     /**
-     * Creates logical gameboard [row x cols] and fills it with 0-s.
-     * @fires drawGameBoard - should draw visual gameboard on the screen
-     * @fires updateGameBoard - should re-draw visual gameboard to match logical gameboard
+     * Creates logical game board [row x cols] and fills it with 0-s.
+     * @fires drawGameBoard - should draw visual game board on the screen
+     * @fires updateGameBoard - should re-draw visual game board to match logical game board
      */
-    createGameboard = () => {
+    createGameBoard = () => {
         //Creates 2D array pre-filled with 0-s.
         this.gameBoard = Array(this.rows).fill(0).map(() => Array(this.cols).fill(0));
         document.dispatchEvent(new CustomEvent('drawGameBoard', { detail: this.gameBoard }));

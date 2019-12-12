@@ -1,7 +1,4 @@
 import * as PIXI from 'pixi.js';
-//https://jvilk.com/MakeTypes/
-
-//right panel at 500
 
 /**
  * Draws 2D array of animated sprites on the screen 
@@ -9,7 +6,7 @@ import * as PIXI from 'pixi.js';
  * on drawGameBoard 2D array of animated sprites is created and displayed
  * @listens updateGameBoard
  * on updateGameBoard sprites change animation 
- * @todo with little tweeks can be used to draw "incoming" tetrominos board
+ * @todo with little changes can be used to draw "incoming" tetrominos board
  */
 class VisualBoard {
 
@@ -39,14 +36,14 @@ class VisualBoard {
      * For each value in the 2D gameBoard array creates a sprite
      * Sets sprite animation frame to this value.
      * Adds sprite to the stage. 
-     * Value's row, col positions in gameBoard array determin the position of the sprite on the stage e.g.
+     * Value's row, col positions in gameBoard array determine the position of the sprite on the stage e.g.
      * sprite1: row=0, col=0: -> Sprite1 position  determined by paddingLeft and paddingTop.
-     * sprite2: row=1, col=0: -> sprite2 is below sprite1 - movedd a blockSize down from sprite1.
+     * sprite2: row=1, col=0: -> sprite2 is below sprite1 - moved a blockSize down from sprite1.
      */
     createBoard = (event) => {
         const gameBoard = event.detail
         for (let row = 0; row < gameBoard.length; row++) {
-            //appends new row to a boad array
+            //appends new row to a board array
             this.board.push(new Array())
             for (let col = 0; col < gameBoard[row].length; col++) {
                 //saves AnimatedSprite to board array
@@ -58,11 +55,11 @@ class VisualBoard {
      * Creates animated sprite with 8 possible animation frames from this.blockTextureArray.
      * First animation frame shows empty space (black block).
      * Subsequent 7 frames frames correspond to tetromino colors.
-     * Sets sprite's animation frame to value from gameBoard array (currently allways 0).
+     * Sets sprite's animation frame to value from gameBoard array (currently always 0).
      * places sprite on the stage based on blocks row and column numbers in gameBoard array.
      * @param value sprite's current animation frame
-     * @param row  sprite's row in a gameboard
-     * @param col  sprite's column in a gameboard
+     * @param row  sprite's row in a game board
+     * @param col  sprite's column in a game board
      * @returns instance of AnimatedSprite with 8 animation frames
      */
     private createBlock = (value: number, row: number, col: number): PIXI.AnimatedSprite => {
@@ -76,8 +73,8 @@ class VisualBoard {
     }
     /**
      * For every sprite in this.board the animation frame is set to corresponding value from gameBoard array passed as event payload.
-     * @toDo room for optiisation a) redraw rectangular part of the board b) compare and search for actual changes.
-     * @todo figure out custom events type event:{detil:number[][]} does not compile.
+     * @toDo room for optimisation a) redraw rectangular part of the board b) compare and search for actual changes.
+     * @todo figure out custom events type event:{detail:number[][]} does not compile.
      * @see:https://stackoverflow.com/questions/47166369/argument-of-type-e-customevent-void-is-not-assignable-to-parameter-of-ty?rq=1
      */
     updateBoard = (event) => {
@@ -123,8 +120,8 @@ class GameRenderer {
 
     /**
      * Scale  app  so that: 
-     * + app height allways fits to inside window and 
-     * + app is is proportionally resised
+     * + app height always fits to inside window and 
+     * + app is is proportionally resized
      * @see https://www.html5gamedevs.com/topic/26741-right-way-to-manage-stage-size-for-web-and-mobile/ 
      */
     scaleToWindowHeight = () => {
@@ -140,7 +137,7 @@ class GameRenderer {
      * + creates main game board (mainBoard) that will be displayed on the screen
      * @fires frontReady
      * @listens resize
-     * @todo make supe images are preloaded befor fireing  frontReady event
+     * @todo make supe images are preloaded before firing 'frontReady' event
      */
     startPixi = () => {
 
@@ -173,3 +170,6 @@ document.addEventListener("DOMContentLoaded", g.startPixi);
 	 animatedSprite.anchor.set(0.5); app.screen.width
 */
 
+//https://jvilk.com/MakeTypes/
+
+//right panel at 500
