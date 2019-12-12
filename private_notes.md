@@ -1,3 +1,5 @@
+VScode spellchecker https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker
+
 to setup webpack:
 https://appdividend.com/2018/03/18/how-to-setup-typescript-with-webpack-4/#Setup_TypeScript_with_Webpack_4
 multiple outputs with webpack:

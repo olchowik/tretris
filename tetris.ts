@@ -1,27 +1,3 @@
-
-enum Action {DOWN=0, LEFT=1, RIGHT=2, ROTATE=3}; 
-enum RotationState {_0=0, _90=1, _180=2, _270=3}; 
-
-class Tetromino {
-
-    //currentBoardRow and currentBoardCol determine tetromino top-left corner position. 
-    private currentBoardRow: number; // Starting row for tetromino.
-    private currentBoardCol: number; // Starting column for tetromino.
-    private rotation:RotationState; //0-4
-    
-    //check Collisions with boardEdges
-    //check collisions with board Items
-
-
-}
-class ActiveTetromino extends Tetromino {
-  //toBoard
-  //removeFromBoard
-  //addKeyboardListeners
-  //removeKeyboardListeners
-  //move
-}
-
 /**
  * Creates logical game board - a 2D array od numbers that stores values corresponding tetromino colors.
  * Keeps game state (isPlaying) and score.
@@ -60,6 +36,35 @@ class Game {
 }
 let g = new Game();
 
+
+enum Action { DOWN = 0, LEFT = 1, RIGHT = 2, ROTATE = 3 };
+enum RotationState { _0 = 0, _90 = 1, _180 = 2, _270 = 3 };
+
+class Tetromino {
+
+    //currentBoardRow and currentBoardCol determine tetromino top-left corner position. 
+    private currentBoardRow: number; // Starting row for tetromino.
+    private currentBoardCol: number; // Starting column for tetromino.
+    private rotation: RotationState; //0-4
+
+    //check Collisions with boardEdges
+    //check collisions with board Items
+
+
+}
+class ActiveTetromino extends Tetromino {
+    //toBoard
+    //removeFromBoard
+    //addKeyboardListeners
+    //removeKeyboardListeners
+    //move
+}
+
+function update(time = 0) {
+    console.log(time);
+    //perform calculations
+    requestAnimationFrame(update);
+}
 
 /* NOTES:
 

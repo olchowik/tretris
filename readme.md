@@ -2,9 +2,10 @@ html5 game engines https://html5gameengine.com/
 
 ROADMAP:
 + project setup with TypeScript, webpack and PIXI
-+ frontend that drows and update game board
++ frontend that draws and update game board
 + basic app scaling
 + communication between frontend and backend via events
+
 - game-loop 
 - logic behind tetrominos -shapes, -movements -rotations 
 - removal of full rows?

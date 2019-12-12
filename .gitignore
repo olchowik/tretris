@@ -2,6 +2,7 @@
 old/*
 assets/full
 assets/unused
+.vscode/
 # Logs
 logs
 *.log
