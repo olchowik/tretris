@@ -1,3 +1,4 @@
+awesome typescript resource: https://basarat.gitbooks.io/typescript/docs/tips/singleton.html
 VScode spellchecker https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker
 
 to setup webpack:
